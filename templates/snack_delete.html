@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p> Do you really want to delete '{{snack.title}}'?</p>
+  <input type="submit" value="DELETE">
+  <input type="submit" onclick="{% url 'snack_list' %}" value="CANCEL">
+</form>
+
+{% endblock content %}
